@@ -52,4 +52,7 @@ export class StartScene extends IScene {
     this.loaderBarFill.scale.x = this.progress / 100;
   }
 
+  resize(width: number, height: number): void {
+    console.log('[StartScene] resize', width, height);
+  }
 }
