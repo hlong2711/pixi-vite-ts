@@ -1,16 +1,21 @@
-import './style.css'
+import { SceneManager } from './scene-manager';
+import { StartScene } from './start-scene';
+import './style.css';
 
-import { Application, Sprite, Assets } from "pixi.js";
+import { Application, Assets, Sprite } from "pixi.js";
 
 const DESIGN_WIDTH = 720;
-const DESIGN_HEIGHT = 1280;
+const DESIGN_HEIGHT = 1280 / 2;
 
 const app = new Application();
 
 window.onload = async (): Promise<void> => {
 
-  await demo();
+  // await demo();
+
+  await init();
 }
+
 
 async function demo() {
   await app.init({
@@ -36,4 +41,9 @@ async function demo() {
   app.ticker.add(() => {
     sprite.rotation += 0.01;
   })
+}
+
+async function init() {
+  await SceneManager.initialize(DESIGN_WIDTH, DESIGN_HEIGHT, 'ffffff')
+  SceneManager.changeScene(new StartScene());
 }
