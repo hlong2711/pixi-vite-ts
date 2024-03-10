@@ -12,5 +12,5 @@ export abstract class IScene extends Container {
    * @param width canvas width in html
    * @param height canvas height in html
    */
-  resize(width: number, height: number): void { }
+  resize(_width: number, _height: number): void { }
 }

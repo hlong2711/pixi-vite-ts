@@ -15,6 +15,7 @@ window.onload = async (): Promise<void> => {
   await init();
 };
 
+//@ts-ignore
 async function demo() {
   await app.init({
     width: DESIGN_WIDTH,
